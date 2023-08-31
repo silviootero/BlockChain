@@ -1,0 +1,23 @@
+package main
+
+import (
+    "crypto/sha256"
+    "fmt"
+)
+
+func main() {
+    data := "Hola, este es un mensaje para calcular el hash SHA-256"
+
+    // Crear un nuevo hash SHA-256
+    hash := sha256.New()
+
+    // Escribir los datos en el hash
+    hash.Write([]byte(data))
+
+    // Calcular el hash
+    hashed := hash.Sum(nil)
+
+    // Imprimir el hash en formato hexadecimal
+    fmt.Printf("Mensaje: %s\n", data)
+    fmt.Printf("Hash SHA-256: %x\n", hashed)
+}
